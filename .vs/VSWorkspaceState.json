@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\payment-insert",
+    "\\src\\app\\payment-parent",
+    "\\src\\app\\shared"
+  ],
+  "SelectedNode": "\\src\\app\\payment-insert\\payment-insert.component.ts",
+  "PreviewInSolutionExplorer": false
+}

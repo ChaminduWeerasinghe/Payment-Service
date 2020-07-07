@@ -1,0 +1,54 @@
+.card1 {
+  margin: 0;
+  padding: 15px;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  background: #263238;
+  height: 100%
+}
+.item-name {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 20px
+}
+.line {
+  border-bottom: 1px grey solid
+}
+.lineV{
+  border-right: 1px grey solid;
+}
+
+.Number-of-items {
+  color: #BDBDBD
+}
+
+.curs :hover{
+  cursor: pointer;
+}
+
+
+#total {
+  margin-top: 0px;
+  padding-left: 7px
+}
+
+.bill-head {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#total-label {
+  margin-bottom: 0px;
+  color: #ffffff;
+  padding-left: 7px
+}
+#heading1 {
+  color: #ffffff;
+  font-size: 30px;
+  padding-left: 10px
+}

@@ -1,0 +1,12 @@
+|
+|-src
+|   |-app
+|   	|-payment-details
+|	|
+|	|-payment-card-details	
+|	|
+|	|-shared
+|	    |-payment-model.ts
+|	    |-payment-service.ts
+|
+|

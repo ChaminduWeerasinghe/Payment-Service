@@ -1,0 +1,64 @@
+
+<div class="receipt-content" >
+  <div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="invoice-wrapper" id="content">
+          <div class="intro">
+            Hi <strong>{{this.patientName.name}}</strong>,
+            <br>
+            This is the receipt for a payment of <strong>${{this.paymentDetail.ammount}}</strong> (USD)
+          </div>
+
+          <div class="payment-info">
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Payment No: {{paymentid}}</span>
+                <strong></strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Payment Date</span>
+                <strong>Date :{{paymentDate}} &nbsp; Time {{paymentTime}}:</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-details">
+            <div class="row">
+              
+            </div>
+          </div>
+
+          <div class="line-items">
+            <table class="table table-borderless" style="float:left;color:#7a7a7a">
+              <thead>
+                <tr style="font-size: 15px;">
+                  <td scope="col">Description</td>
+                  <td class="text-right" scope="col">Ammount</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>{{this.paymentDetail.description}}</strong></td>
+                  <td class="text-right"><strong>${{this.paymentDetail.ammount}}</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="text-right" style="font-size: 20px;">
+              Total &nbsp;&nbsp; <span style="color: #20A720;">${{this.paymentDetail.ammount}}</span>
+            </div>
+          </div>
+
+        </div>
+
+        <button type="button" style="float: right;" (click)="printReceipt()" class="btn btn-outline-secondary">
+          <i class="fa fa-print"></i>
+          Print this receipt</button>
+        <div class="footer">
+          Copyright © 2020. Hospital Management System 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>                    

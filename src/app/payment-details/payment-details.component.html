@@ -1,0 +1,19 @@
+<div class="card rounded-0 border-0 card1 overflow-auto " id="bill">
+  <h3 id="heading1">Payment Summary</h3>
+
+  <div class="row" style="position:relative" *ngFor="let payment of paymentDetail" >
+      <div class="col-5 pl-2 pr-0 pt-4 pb-2 curs" data-toggle="tooltip" data-placement="top" title="Click to ViewDetails"  (click)="clickPaymentDetail(payment.paymentid)">
+        <h2 class="item-name">{{payment.description}}</h2> <small class="Number-of-items">Payment ID : {{payment.paymentid}}</small>
+      </div>
+      <div class="col-4 px-0 pt-4 pb-2 lineV curs" data-toggle="tooltip" data-placement="top" title="Click to ViewDetails" (click)="clickPaymentDetail(payment.paymentid)">
+        <h2 class="bill-head ">$ {{payment.ammount}}</h2>
+      </div>
+      <div class="col-1 pt-4 pb-2" (click)="deletePaymentDetail(payment.paymentid)">
+        <button type="button" data-toggle="tooltip" data-placement="top" title="Delete Payment" class="btn btn-outline-light  btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+      <div class="col-2 pt-4 pb-2" (click)="updatePayment(payment.paymentid)">
+        <button type="button" data-toggle="tooltip" data-placement="top" title="Update Payment" class="btn btn-outline-light  btn-sm"><i class="fas fa-edit" aria-hidden="true"></i></button>
+      </div>
+  </div>
+  
+</div>

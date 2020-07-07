@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+html {
+  height: 100%
+}
+
+body {
+  background-color: #000000
+}
+
+#toast-Container > div
+{
+  opacity: 1;
+}
+

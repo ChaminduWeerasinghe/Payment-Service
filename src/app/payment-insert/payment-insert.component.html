@@ -1,0 +1,68 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="card rounded-0 border-0 card2" id="paypage">
+    <div class="form-card">
+      <h2 id="heading2" class="text-danger">Payment Method</h2>
+      <div hidden *ngIf="!data.isInsert">
+        <input hidden type="text" #payID [(ngModel)]="data.Data.paymentID" name="paymentid">
+      </div>
+      <div class="row">
+        <div class="col-4 col-md-6">
+          <label for="patientID" class="patient">Patient ID</label>
+          
+          <input type="number" style=" font-weight:bold;" #PayerID="ngModel" [(ngModel)]="data.Data.patientID" name="patientid" min="1" required id="patientID" class="patient form-control mb-0" [class.is-invalid]="PayerID.invalid && PayerID.touched" placeholder="Patient ID">
+          <div class="invalid-feedback">
+           Please Provide PatientID
+          </div>
+        </div>
+        <div class="col-4 col-md-6">
+          <label for="ammount" class="patient">Ammount</label>
+          <input type="number"  maxlength="10" style=" font-weight:bold;" #Payammount="ngModel" [class.is-invalid]="Payammount.invalid && Payammount.touched" [(ngModel)]="data.Data.ammount" name="ammount" min="1" required id="ammount" class="patient form-control  mb-0" placeholder="Pay Ammount">
+          <div class="invalid-feedback">
+            Please Provide Payable Ammount
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12  mt-3 mb-4 col-md-12">
+          <label class="patient">Desctiption</label>
+          <textarea name="description" style=" font-weight:bold;" [class.is-invalid]="desc.invalid &&  desc.touched" #desc="ngModel" [(ngModel)]="data.Data.description" placeholder="Desctiption"  class="patient form-control mb-0" maxlength="300"></textarea>
+          <div class="invalid-feedback">
+            Can write only 300 Charactors
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <label for="name" class="pay">Name on Card</label> <input type="text" #crdName [(ngModel)]="data.Data.nameOnCard" id="name" name="holdername" placeholder="John Smith">
+
+      <div class="row">
+        <div class="col-8 col-md-6"> 
+          <label for="crdNo" class="pay">Card Number</label>
+          <input type="text" class=" form-control mb-0 " #cdNo="ngModel" [class.is-invalid]="rslt" [class.is-invalid]="cdNo.touched" name="cardNo"  [(ngModel)]="data.Data.cardNo" required id="crdNo" placeholder="0000-0000-0000-0000" minlength="19" maxlength="19" (input)="onCrdNumChange($event.target.value)"> 
+          <div class="invalid-feedback">
+            {{rsltString}}
+          </div>
+        </div>
+        <div class="col-4 col-md-6"> 
+          <label for="Crdcvc" class="pay">CVV</label> 
+          <input type="password" id="Crdcvc" [class.is-invalid]="cv.invalid && (cv.dirty || cv.touched)" name="cvc" #cv="ngModel" [(ngModel)]="data.Data.cvc" placeholder="&#9679;&#9679;&#9679;" required class="placeicon form-control mb-0"  minlength="3" maxlength="3"> 
+          <div class="invalid-feedback">
+             CVC must Needed
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 mt-4"> <label class="pay">Expiration Date</label> </div>
+        <div class="col-md-12 mb-0"><input name="expDate"  [class.is-invalid]="exdate.invalid" #exdate="ngModel" [(ngModel)]="data.Data.expDate" class="form-control" type="date" id="expDate"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mt-2"> <input type="submit"  value="MAKE A PAYMENT &nbsp; &#xf178;" class="btn btn-info placeicon"> </div>
+        
+      </div>
+
+    </div>
+  </div>
+</form>
